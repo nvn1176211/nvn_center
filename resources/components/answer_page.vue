@@ -2,7 +2,6 @@
   <div>
     <div class="n-question-ctn">
       <div class="n-question">
-        <h1>{{ page_title }}</h1>
         <h4 class="n-question-text">{{ question }}</h4>
         <div>
           <span class="text-secondary">Asked </span
@@ -56,7 +55,6 @@ export default {
   components: { UerCardSm },
   data: function () {
     return {
-      page_title: this.$store.state.page_title,
       question: "What's tooltip?",
       aksed_time: "1 year, 2 months ago",
       question_detail:

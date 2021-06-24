@@ -2,24 +2,28 @@
   <div>
     <Header/>
     <div class="container nvn-container">
-      <Page v-if="page_title == page_index.ANSWER_PAGE"/>
+      <h3>{{ page_title }}</h3>
+      <AnswerPage v-if="currentPageIndex == page_index.ANSWER_PAGE"/>
+      <TagsPage v-else-if="currentPageIndex == page_index.TAGS_PAGE"/>
     </div>
   </div>
 </template>
 
 <script>
 import Header from './header.vue';
-import Page from './page.vue';
+import AnswerPage from './answer_page.vue';
+import TagsPage from './tags_page.vue';
 import {PAGE_INDEX} from '../constants';
 
 console.log(PAGE_INDEX);
 
 export default{
-  components: { Header, Page },
+  components: { Header, AnswerPage, TagsPage },
   data: function () {
     return {
-      page_title: this.$store.state.page_index,
+      currentPageIndex: this.$store.state.page_index,
       page_index: PAGE_INDEX,
+      page_title: this.$store.state.page_title,
     };
   },
 }

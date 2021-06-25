@@ -2,7 +2,9 @@
   <div>
     <Header/>
     <div class="container nvn-container">
-      <h3>{{ page_title }}</h3>
+      <div class="mb-3">
+        <h4>{{ page_title }}</h4>
+      </div>
       <AnswerPage v-if="currentPageIndex == page_index.ANSWER_PAGE"/>
       <TagsPage v-else-if="currentPageIndex == page_index.TAGS_PAGE"/>
     </div>

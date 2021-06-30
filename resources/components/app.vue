@@ -17,8 +17,6 @@ import AnswerPage from './answer_page.vue';
 import TagsPage from './tags_page.vue';
 import {PAGE_INDEX} from '../constants';
 
-console.log(PAGE_INDEX);
-
 export default{
   components: { Header, AnswerPage, TagsPage },
   data: function () {

@@ -1,4 +1,5 @@
 import './css/index.css';
+import 'font-awesome/css/font-awesome.css';
 import Vue from 'vue';
 import App from './components/app.vue';
 import store from './store/index';

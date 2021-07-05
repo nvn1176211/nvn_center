@@ -7,6 +7,15 @@
                 <h2 class="text-danger">{{ logo_text }}</h2>
             </div>
             <div>
+              <img src="../images/en.png" alt="user thumb" width="45" height="45" class="mr-5px">
+                  <!-- <label for="locale">locale</label> -->
+                  <!-- <select v-model="locale"> -->
+                  <select>
+                    <option>En</option>
+                    <option style='background-image: url("../images/en.png")'>Vi</option>
+                  </select>
+            </div>
+            <div>
                 <a class="link-text mr-15px" href="#">Register</a>
                 <a class="link-text" href="#">Login</a>
             </div>
@@ -36,5 +45,8 @@ export default {
     align-items: center;
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+  option{
+    background-image: url("../images/en.png")
   }
 </style>

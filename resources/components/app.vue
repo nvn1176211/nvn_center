@@ -26,6 +26,12 @@ export default{
       page_title: this.$store.state.page_title,
     };
   },
+  // mounted () {
+  //   // console.log(12343);
+  //   axios
+  //     .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+  //     .then(response => ( console.log(response) ));
+  // }
 }
 </script>
 

@@ -17,6 +17,7 @@
     "webpack-cli": "^4.7.2"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
     "css-loader": "^5.2.6",
     "font-awesome": "^4.7.0",

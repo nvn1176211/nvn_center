@@ -27,7 +27,7 @@ export default{
     };
   },
   mounted () {
-    // console.log(12343);
+    console.log(12343);
     axios
       .get('https://api.coindesk.com/v1/bpi/currentprice.json')
       .then(response => ( console.log(response) ));

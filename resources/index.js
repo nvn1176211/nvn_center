@@ -8,6 +8,8 @@ import App from './components/app.vue';
 import store from './store/index';
 import VueI18n from 'vue-i18n';
 
+Vue.config.productionTip = false;
+Vue.config.devtools = false
 window.axios = require('axios').default;
 
 Vue.use(VueI18n);

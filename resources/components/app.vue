@@ -27,9 +27,8 @@ export default{
     };
   },
   mounted () {
-    console.log(12343);
     axios
-      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+      .get('http://localhost:8080/nvn_center/api/tags')
       .then(response => ( console.log(response) ));
   }
 }

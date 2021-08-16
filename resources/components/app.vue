@@ -26,11 +26,6 @@ export default{
       page_title: this.$store.state.page_title,
     };
   },
-  mounted () {
-    axios
-      .get('http://localhost:8080/nvn_center/api/tags')
-      .then(response => ( console.log(response) ));
-  }
 }
 </script>
 

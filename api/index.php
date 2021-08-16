@@ -1,5 +1,7 @@
 <?php
 require './bootstrap.php';
+use src\models\tags;
+
 
 // $tags = new tags($dbConnection);
 // $tagsAll = $tags->findAll();
@@ -7,9 +9,9 @@ require './bootstrap.php';
 // echo var_export($tagsAll);
 // echo '</pre>';die;
 
-echo '<pre>' ;
-echo var_export($tagsAll);
-echo '</pre>';die;
+// echo '<pre>' ;
+// echo var_export($tagsAll);
+// echo '</pre>';die;
 
 
 
@@ -18,12 +20,9 @@ $uri = $_SERVER['REQUEST_URI'];
 
 switch ($uri) {
     case '/nvn_center/api/tags' : {
-
-        echo '<pre>' ;
-        echo var_export($uri);
-        echo '</pre>';
-
-        break;
+        $tags = new tags($DB);
+        $tagsAll = $tags->findAll();
+        echo json_encode($tagsAll);die;
     }
     default:{
         

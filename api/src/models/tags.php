@@ -13,7 +13,7 @@ class tags {
     public function findAll(){
         $rawQuery = "
             SELECT 
-                *
+                id, name
             FROM
                 tags;
         ";

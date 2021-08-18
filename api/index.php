@@ -1,6 +1,7 @@
 <?php
 require './bootstrap.php';
 use src\models\tags;
+use src\models\langs;
 
 
 // $tags = new tags($dbConnection);
@@ -23,6 +24,14 @@ switch ($uri) {
         $tags = new tags($DB);
         $tagsAll = $tags->findAll();
         echo json_encode($tagsAll);die;
+    }
+    case '/nvn_center/api/bootstrap' : {
+        $langs = new langs($DB);
+        $langsAll = $langs->findAll();
+        $bootstrapData = [
+            'lang' => $langsAll
+        ];
+        echo json_encode($bootstrapData);die;
     }
     default:{
         

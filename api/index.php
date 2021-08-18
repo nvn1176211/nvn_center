@@ -29,7 +29,7 @@ switch ($uri) {
         $langs = new langs($DB);
         $langsAll = $langs->findAll();
         $bootstrapData = [
-            'lang' => $langsAll
+            'langs' => $langsAll
         ];
         echo json_encode($bootstrapData);die;
     }

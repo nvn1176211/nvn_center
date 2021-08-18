@@ -17,8 +17,7 @@
                     <i class="fa fa-angle-down" aria-hidden="true"></i>
                   </div>
                   <div v-show="lan_box_status" class="language-box">
-                    <div class="text-center">English</div>
-                    <div class="text-center">Tiếng Việt</div>
+                    <div class="text-center" v-for="lang in langs" :key="lang.id">{{lang.name}}</div>
                   </div>
                 </div>
             </div>
@@ -29,17 +28,25 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   data: function () {
     return {
       logo_text: "NVN",
-      lan_box_status: false
+      lan_box_status: false,
     };
   },
   methods: {
     toggleLanBox: function(){
+      // console.log(this.$store.state.langs);
       this.lan_box_status = this.lan_box_status == true ? false : true; 
     }
+  },
+  computed: {
+    ...mapState([
+      'langs'
+    ])
   }
 }
 </script>

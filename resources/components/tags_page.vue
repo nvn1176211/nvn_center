@@ -18,7 +18,7 @@ export default {
     },
     mounted () {
         axios
-        .get('http://localhost/nvn_center/api/tags')
+        .get('http://localhost:90/nvn_center/api/tags')
         .then(response => ( 
             this.tags = response.data
         ));

@@ -26,6 +26,23 @@ export default{
       page_title: this.$store.state.page_title,
     };
   },
+  mounted () {
+    // console.log(this.$store.state.langs);
+    axios
+    .get('http://localhost:90/nvn_center/api/bootstrap')
+    .then(response => ( 
+        this.dataCooking(response.data)
+    ));
+  },
+  methods: {
+    dataCooking: function(data){
+      if(!data){
+        console.log('No bootstrap data!');
+        return;
+      }
+      this.$store.commit('bootstrap', data);
+    }
+  },
 }
 </script>
 

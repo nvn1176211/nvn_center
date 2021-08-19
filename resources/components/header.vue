@@ -11,13 +11,15 @@
                   <a class="mr-15px" href="#">Register</a>
                   <a href="#">Login</a>
                 </div>
-                <div class="lan-ctn">
-                  <div @click="toggleLanBox" class="language-flag">
-                    <b>English</b>
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                  </div>
-                  <div v-show="lan_box_status" class="language-box">
-                    <div class="text-center" v-for="lang in langs" :key="lang.id">{{lang.name}}</div>
+                <div>
+                  <div class="lan-ctn">
+                    <div @click="toggleLanBox" class="language-flag">
+                      <span>{{langSelectText}}</span>
+                      <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </div>
+                    <div v-show="lan_box_status" class="language-box">
+                      <div class="text-center" v-for="lang in langs" :key="lang.id" @click="langSelect(lang.id)">{{lang.name}}</div>
+                    </div>
                   </div>
                 </div>
             </div>
@@ -39,13 +41,16 @@ export default {
   },
   methods: {
     toggleLanBox: function(){
-      // console.log(this.$store.state.langs);
       this.lan_box_status = this.lan_box_status == true ? false : true; 
+    },
+    langSelect: function(id){
+      this.$store.commit('langSelect', id);
+      this.lan_box_status = false;
     }
   },
   computed: {
     ...mapState([
-      'langs'
+      'langs', 'langSelectText'
     ])
   }
 }
@@ -72,24 +77,27 @@ export default {
   }
   .lan-ctn{
     position: relative;
-    width: 110px;
+    display: inline-block;
   }
   .language-flag{
     border-bottom: 1px solid black;
     text-align: center;    
     margin-top: 15px;
-    position: relative;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .language-flag>span{
+    margin-left: 10px;
   }
   .language-flag>i{
-    position: absolute;
-    right: 10px;
-    top: 3px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
   .language-box{
     position: absolute;
     top: 40px;
-    width: 110px;
+    min-width: 110px;
     background-color: rgb(248, 248, 248);
     border: 1px solid rgb(210, 210, 210);
   }

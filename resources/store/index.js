@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        lan: 1,
+        langSelectID: 1,
+        langSelectText: 'English',
         test: 1,
         test2: 1,
         page_title: 'Tags',
@@ -22,6 +23,15 @@ export default new Vuex.Store({
                 state.test2 = 2;
             }else{
                 console.log('empty lang data!');
+            }
+        },
+        langSelect(state, id){
+            state.langSelectID = id;
+            for(let i = 0; i <= state.langs.length; i++){
+                if(state.langSelectID == state.langs[i].id){
+                    state.langSelectText = state.langs[i].name;
+                    break;
+                }
             }
         }
     }

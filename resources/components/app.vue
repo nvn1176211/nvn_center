@@ -2,23 +2,19 @@
   <div>
     <Header/>
     <div class="container nvn-container">
-      <div class="mb-3">
-        <h4>{{ page_title }}</h4>
+      <div>
+        <router-view></router-view>
       </div>
-      <AnswerPage v-if="currentPageIndex == page_index.ANSWER_PAGE"/>
-      <TagsPage v-else-if="currentPageIndex == page_index.TAGS_PAGE"/>
     </div>
   </div>
 </template>
 
 <script>
 import Header from './header.vue';
-import AnswerPage from './answer_page.vue';
-import TagsPage from './tags_page.vue';
 import {PAGE_INDEX} from '../constants';
 
 export default{
-  components: { Header, AnswerPage, TagsPage },
+  components: { Header },
   data: function () {
     return {
       currentPageIndex: this.$store.state.page_index,
@@ -27,7 +23,6 @@ export default{
     };
   },
   mounted () {
-    // console.log(this.$store.state.langs);
     axios
     .get('http://localhost:90/nvn_center/api/bootstrap')
     .then(response => ( 

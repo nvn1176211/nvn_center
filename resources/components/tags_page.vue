@@ -1,9 +1,13 @@
 <template>
     <div>
+        <div class="mb-3">
+            <h4>Tags</h4>
+        </div>
         <p>{{ $t("tagpage.intro") }}</p>
         <div class="tags-ctn">
             <div v-for="tag in tags" :key="tag.id" class="tag-card">
-                <a href="#" class="tag-link">{{ tag.name }}</a>
+                <!-- <a href="#" class="tag-link">{{ tag.name }}</a> -->
+                <router-link :to="'tags/'+tag.id" class="tag-link">{{ tag.name }}</router-link>
             </div>
         </div>
     </div>

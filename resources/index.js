@@ -1,11 +1,10 @@
-// import axios from 'axios';
-
 import './css/index.css';
 import 'font-awesome/css/font-awesome.css';
 
 import Vue from 'vue';
 import App from './components/app.vue';
 import store from './store/index';
+import router from './router';
 import VueI18n from 'vue-i18n';
 
 // Vue.config.productionTip = false;
@@ -34,5 +33,6 @@ var vm = new Vue({
     el: '#app',
     store,
     i18n,
+    router,
     render: h => h(App)
 })

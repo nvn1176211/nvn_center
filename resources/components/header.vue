@@ -3,8 +3,11 @@
     <div class="n-hearbar-ctn">
         <div class="container">
           <div class="n-hearbar">
-            <div>
-                <h2 class="text-danger">{{ logo_text }}</h2>
+            <div class="left-section">
+                <a class="text-danger header-logo" :href="base.url">{{ logo_text }}</a>
+                <div class="left-section-menu">
+                  <router-link to="/tags">Tags</router-link>
+                </div>
             </div>
             <div class="d-flex flex-column">
                 <div class="login-pack">
@@ -50,7 +53,7 @@ export default {
   },
   computed: {
     ...mapState([
-      'langs', 'langSelectText'
+      'langs', 'langSelectText', 'base'
     ])
   }
 }
@@ -66,6 +69,24 @@ export default {
     align-items: center;
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+  .left-section{
+    display: flex;
+    align-items: center;
+  }
+  .header-logo{
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  .left-section-menu{
+    margin-left: 20px;
+  }
+  .left-section-menu>a{
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: gray;
   }
   .login-pack>a{
     font-size: 0.9rem;

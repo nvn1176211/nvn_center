@@ -5,12 +5,11 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
+        base:{
+            url: 'http://localhost:90/nvn_center'
+        },
         langSelectID: 1,
         langSelectText: 'English',
-        test: 1,
-        test2: 1,
-        page_title: 'Tags',
-        page_index: 7,
         langs: [
             {id: 1, name:'English'}
         ],
